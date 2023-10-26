@@ -16,9 +16,12 @@ class _Page2State extends State<Page2> {
         automaticallyImplyLeading: true,
         leading: const BackButton(color: Colors.blue,),
         title: const Text("Retour", style: TextStyle(color: Colors.blue),),
-        // actions: const [
-        //   Icon(Icons.upgrade_sharp)
-        // ],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 2),
+            child: IconButton(onPressed: (){}, icon: const Icon(Icons.edit)),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         dragStartBehavior: DragStartBehavior.down,

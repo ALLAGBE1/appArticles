@@ -3,6 +3,21 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+
+class MenuItem {
+  final IconData icon;
+  final String label;
+
+  MenuItem(this.icon, this.label);
+}
+
+List<MenuItem> menuItems = [
+  MenuItem(Icons.man, "Manga"),
+  MenuItem(Icons.woman_2_rounded, "Comics"),
+  MenuItem(Icons.movie, "Cinéma"),
+  MenuItem(Icons.woman, "Manga 2"),
+];
+
 class Page1 extends StatefulWidget {
   const Page1({super.key});
 
@@ -48,76 +63,40 @@ class _Page1State extends State<Page1> {
     );
   }
 
-  Widget _menu(){
+  Widget _menu() {
+    const double itemSpacing = 8.0;
     return SizedBox(
-      height: MediaQuery.of(context).size.height/8,
+      height: MediaQuery.of(context).size.height / 8,
       width: MediaQuery.of(context).size.width,
-      child: ListView(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        children: [
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  color: const Color.fromARGB(255, 240, 237, 237)),
-              child: const Row(
-                children: [
-                  Icon(Icons.man),
-                  SizedBox(width: 10,),
-                  Text("Manga"),
-                ],
-              )),
-          ), 
-          const SizedBox(width: 3,),
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                  // border: Border.all(color: Colors.greenAccent),
-                  borderRadius: BorderRadius.circular(24),
-                  color: const Color.fromARGB(255, 240, 237, 237)),
-              child: const Row(
-                children: [
-                  Icon(Icons.woman_2_rounded, color: Color.fromARGB(255, 255, 255, 0),),
-                  SizedBox(width: 10,),
-                  Text("Comics"),
-                ],
-              )),
-          ), 
-          const SizedBox(width: 3,),
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                  // border: Border.all(color: Colors.greenAccent),
-                  borderRadius: BorderRadius.circular(24),
-                  color: const Color.fromARGB(255, 240, 237, 237)),
-              child: const Row(
-                children: [
-                  Icon(Icons.movie),
-                  SizedBox(width: 10,),
-                  Text("Cinéma"),
-                ],
-              )),
-          ), 
-          const SizedBox(width: 3,),
-          Center(
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                  // border: Border.all(color: Colors.greenAccent),
-                  borderRadius: BorderRadius.circular(24),
-                  color: const Color.fromARGB(255, 240, 237, 237)),
-              child: const Row(
-                children: [
-                  Icon(Icons.man),
-                  SizedBox(width: 10,),
-                  Text("Manga"),
-                ],
-              )),
-          ), 
-        ],
+        itemCount: menuItems.length,
+        itemBuilder: (context, index) {
+          MenuItem menuItem = menuItems[index];
+          return Padding(
+            padding: const EdgeInsets.only(right: itemSpacing),
+            child: Center(
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: const Color.fromARGB(255, 240, 237, 237)),
+                child: InkWell(
+                  onTap: (){
+                    print("Appuyer");
+                  },
+                  child: Row(
+                    children: [
+                      Icon(menuItem.icon),
+                      const SizedBox(width: 10),
+                      Text(menuItem.label),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -164,7 +143,7 @@ class _Page1State extends State<Page1> {
       // height: 500, 
       height: MediaQuery.of(context).size.height * 0.5, 
       child: ListView.builder(
-        itemCount: 5, // Nombre d'éléments à afficher
+        itemCount: 5,
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -197,9 +176,9 @@ class _Page1State extends State<Page1> {
                           ),
                           Row(
                             children: [
-                              Text("Review  .  ", style: TextStyle(color: Colors.blue),),
-                              SizedBox(width: 5,),
-                              Text("20 août 2022", style: TextStyle(color: Color.fromARGB(255, 209, 207, 207)),)
+                              Text("Review", style: TextStyle(color: Colors.blue)),
+                              Text(" • "),
+                              Text("20 août 2022", style: TextStyle(color: Colors.black)),
                             ],
                           )
                         ],
@@ -214,7 +193,6 @@ class _Page1State extends State<Page1> {
       ),
     );
   }
-
 }
 
 class MyClipper extends CustomClipper<Path> {
