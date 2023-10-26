@@ -1,14 +1,16 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class Home1 extends StatefulWidget {
-  const Home1({super.key});
+class Page1 extends StatefulWidget {
+  const Page1({super.key});
 
   @override
-  State<Home1> createState() => _Home1State();
+  State<Page1> createState() => _Page1State();
 }
 
-class _Home1State extends State<Home1> {
+class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,14 +114,13 @@ class _Home1State extends State<Home1> {
                   Icon(Icons.man),
                   SizedBox(width: 10,),
                   Text("Manga"),
-
                 ],
               )),
           ), 
         ],
       ),
     );
-}
+  }
 
   Widget _cadre1() {
     return Stack(
@@ -142,8 +143,7 @@ class _Home1State extends State<Home1> {
         ),
       ],
     );
-}
-
+  }
 
   Widget _textSousCardre() {
     return const SizedBox(
@@ -156,8 +156,7 @@ class _Home1State extends State<Home1> {
         ),
       ),
     );
-}
-
+  }
 
   Widget _listCard() {
     return SizedBox(
@@ -214,7 +213,7 @@ class _Home1State extends State<Home1> {
         },
       ),
     );
-}
+  }
 
 }
 

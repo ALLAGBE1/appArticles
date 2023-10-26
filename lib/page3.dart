@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class Page2 extends StatefulWidget {
-  const Page2({super.key});
+class Page3 extends StatefulWidget {
+  const Page3({super.key});
 
   @override
-  State<Page2> createState() => _Page2State();
+  State<Page3> createState() => _Page3State();
 }
 
-class _Page2State extends State<Page2> {
+class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +36,16 @@ class _Page2State extends State<Page2> {
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.03,),
             _cadre2(),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.03,),
+            Container(child: _textDuSousCardre(),),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.03,),
 
           ],
         ),
       ),
     );
+
   }
+
 
   Widget _cadre1() {
     return Stack(
@@ -125,7 +129,7 @@ class _Page2State extends State<Page2> {
       child: const Center(child: Text(" ")),
     );
   }
-
+  
 }
 
 
@@ -171,6 +175,3 @@ class MyClipper extends CustomClipper<Path> {
     return false;
   }
 }
-
-
-
