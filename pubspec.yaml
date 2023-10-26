@@ -38,6 +38,7 @@ dependencies:
   flutter_vector_icons: ^1.0.0
   flutter_custom_clippers: ^2.1.0
   wordpress_api: ^1.2.0
+  google_fonts: ^6.1.0
   # flutter_vector_icons: ^1.0.0
   # flutter_icons: ^1.1.0
   # flutter_icons: ^1.1.0
@@ -58,6 +59,27 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: IntegralCF
+      fonts:
+        - asset: assets/fonts/IntegralCF-Regular.otf
+        - asset: assets/fonts/IntegralCF-Medium.otf
+          weight: 500
+        - asset: assets/fonts/IntegralCF-DemiBold.otf
+          weight: 600
+        - asset: assets/fonts/IntegralCF-Bold.otf
+          weight: 700
+        - asset: assets/fonts/IntegralCF-ExtraBold.otf
+          weight: 800
+        - asset: assets/fonts/IntegralCF-Heavy.otf
+          weight: 900
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
