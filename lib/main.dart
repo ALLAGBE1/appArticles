@@ -1,4 +1,4 @@
-import 'package:articles/page0.dart';
+import 'package:articles/page1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Page0(),
+      // home: const Page0(),
+      home: const Page1(),
       debugShowCheckedModeBanner: false,
     );
   }

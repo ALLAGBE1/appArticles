@@ -83,7 +83,7 @@ class _Page1State extends State<Page1> {
                     color: const Color.fromARGB(255, 240, 237, 237)),
                 child: InkWell(
                   onTap: (){
-                    print("Appuyer");
+                    print("<something>");
                   },
                   child: Row(
                     children: [
@@ -150,7 +150,7 @@ class _Page1State extends State<Page1> {
               const Divider(height: 48,),
               InkWell(
                 onTap: () {
-                  print("Appuyer");
+                  print("<something>");
                 },
                 child: Row(
                   children: [
