@@ -1,7 +1,6 @@
-import 'package:articles/page1.dart';
-import 'package:articles/page2.dart';
-import 'package:articles/page3.dart';
 import 'package:flutter/material.dart';
+import 'package:tosho/page2.dart';
+import 'package:tosho/page3.dart';
 
 class Page0 extends StatefulWidget {
   const Page0({super.key});
@@ -18,13 +17,13 @@ class _Page0State extends State<Page0> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const Page1())
-            );
-          }, child: const Text("Cliquez ici pour rejoindre la page 1")),
+          // ElevatedButton(onPressed: (){
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //         builder: (context) => const Page1())
+          //   );
+          // }, child: const Text("Cliquez ici pour rejoindre la page 1")),
           ElevatedButton(onPressed: (){
             Navigator.push(
               context,
